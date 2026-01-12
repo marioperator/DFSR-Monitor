@@ -1,3 +1,6 @@
+Copia questo blocco e incollalo in un nuovo file chiamato README.md su GitHub.
+
+text
 # DFSR Monitor & Performance
 
 Script PowerShell all-in-one per il monitoraggio della replica DFS (DFSR) con test di velocità SMB integrato e reportistica HTML.
@@ -21,3 +24,37 @@ Script PowerShell all-in-one per il monitoraggio della replica DFS (DFSR) con te
 3. **Esegui:**
    ```powershell
    .\DFSR-Monitor.ps1
+⚙️ Parametri Opzionali
+Puoi personalizzare l'esecuzione:
+
+powershell
+.\DFSR-Monitor.ps1 -OutputPath "D:\Reports" -AlertThreshold 500
+-OutputPath: Dove salvare i report (default: C:\DFSReports)
+
+-AlertThreshold: Numero di file oltre il quale segnare ALERT (default: 1000)
+
+-NamespaceFilter: Filtrare specifici namespace (default: \\euronet.local\FS\*)
+
+📊 Output
+Lo script genera una cartella con data/ora contenente:
+
+DFSR-GlobalSummary.html (Il report grafico da aprire)
+
+DFSR-GlobalSummary.csv (Dati grezzi)
+
+Inoltre mantiene uno storico cumulativo in DFSR-BacklogHistory.csv.
+
+🕒 Scheduling (Task Scheduler)
+Per eseguire ogni mattina alle 9:00:
+
+Apri Task Scheduler
+
+Crea Task Basic
+
+Program: powershell.exe
+
+Arguments: -ExecutionPolicy Bypass -File "C:\Scripts\DFSR-Monitor.ps1"
+
+Imposta "Run with highest privileges"
+
+Created by DFSR Monitor Contributors - MIT License
