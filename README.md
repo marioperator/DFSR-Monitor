@@ -1,4 +1,5 @@
 # DFSR Monitor & Performance
+<img width="1828" height="400" alt="image" src="https://github.com/user-attachments/assets/96cab5dd-4f28-4110-bfbe-4ebc6fe03379" />
 
 Advanced PowerShell script for **DFS Replication (DFSR) monitoring**, featuring real-time backlog tracking, integrated SMB speed testing, and interactive HTML reporting.
 
